@@ -1,8 +1,8 @@
 import time
 
-from twistedsort import algorithms
-from twistedsort import constants
-from twistedsort import data_generator
+from pattern_matching import algorithms
+from pattern_matching import constants
+from pattern_matching import data_generator
 
 
 def take_execution_time(minimum_size, maximum_size, step, samples_by_size):
@@ -25,12 +25,12 @@ def take_execution_time(minimum_size, maximum_size, step, samples_by_size):
 def take_times(size, samples_by_size):
     samples = []
     for _ in range(samples_by_size):
-        samples.append(data_generator.get_random_list(size))
+        samples.append(data_generator.generate_patterns_data(size))
 
     return [
-        take_time_for_algorithm(samples, algorithms.split_and_sorted_approach),
-        take_time_for_algorithm(samples, algorithms.no_split_and_sorted_approach),
-        take_time_for_algorithm(samples, algorithms.full_sort_and_iterate_approach),
+        take_time_for_algorithm(samples, algorithms.search_brute_force),
+        take_time_for_algorithm(samples, algorithms.morris_pratt_algorithm),
+        take_time_for_algorithm(samples, algorithms.search_with_automaton),
     ]
 
 
@@ -39,13 +39,12 @@ def take_times(size, samples_by_size):
 """
 
 
-def take_time_for_algorithm(samples_array, sorting_approach):
+def take_time_for_algorithm(samples_array, pattern_matching_approach):
     times = []
 
-    for sample in samples_array:
+    for sample, pattern in samples_array:
         start_time = time.time()
-        sorting_approach(sample.copy())
+        pattern_matching_approach(sample, pattern)
         times.append(int(constants.TIME_MULTIPLIER * (time.time() - start_time)))
-
     times.sort()
     return times[len(times) // 2]
