@@ -12,7 +12,7 @@ The problem is to find a pattern in a text
 | Algorithm            | Best Case        | Average Case     | Worst Case       | Space Complexity |
 |----------------------|-----------------|------------------|------------------|------------------|
 | **Brute Force**      | \( O(mn) \)       | \( O(mn) \)      | \( O(mn) \)      | \( O(1) \)        |
-| **Morris-Pratt**     | \( O(n) \)       | \( O(n + m) \)   | \( O(n + m) \)   | \( O(m) \)        |
+| **Morris-Pratt**     | \( O(n + m) \)       | \( O(n + m) \)   | \( O(n + m) \)   | \( O(m) \)        |
 | **Automaton Search** | \( O(n) \)       | \( O(n) \)       | \( O(n) \)       | \( O(mσ) \)  |
 
 
