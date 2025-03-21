@@ -3,7 +3,7 @@ import string
 from pattern_matching import constants
 
 def generate_patterns_data(size, pattern_probability=0.2):
-    pattern_size = random.randint(0, size//15)
+    pattern_size = random.randint(1, 100)
     chars = string.ascii_uppercase 
     pattern = ""
 
