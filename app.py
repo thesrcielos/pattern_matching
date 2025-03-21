@@ -54,7 +54,7 @@ def graphicsMorrisPrattAutomaton():
     step = 50000
     samples_by_size = 5
     table = execution_time_gathering.take_execution_time(minimum_size, maximum_size, step, samples_by_size, True)
-    print("Size | Brute Force | Morris Pratt | Search with Automaton")
+    print("Size | Morris Pratt | Search with Automaton")
     for row in table:
         print(row)
 
