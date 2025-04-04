@@ -15,15 +15,12 @@ def graphicsAlgorithms():
     for row in table:
         print(row)
 
-
-    # La primera columna será el eje X
     x = [row[0] for row in table]
-    # Las siguientes columnas serán los valores de Y
+
     y1 = [row[1][0] for row in table]
     y2 = [row[2][0] for row in table]
     y3 = [row[3][0] for row in table]
 
-    # Crear el gráfico
     plt.plot(x, y1, label="Brute Force", color='blue')
     plt.plot(x, y2, label="Morris Pratt", color='green')
     plt.plot(x, y3, label="Search with Automaton", color='red')
@@ -58,13 +55,11 @@ def graphicsMorrisPrattAutomaton():
     for row in table:
         print(row)
 
-    # La primera columna será el eje X
     x = [row[0] for row in table]
-    # Las siguientes columnas serán los valores de Y
+
     y1 = [row[1][0] for row in table]
     y2 = [row[2][0] for row in table]
 
-    # Crear el gráfico
     plt.plot(x, y1, label="Morris Pratt", color='blue')
     plt.plot(x, y2, label="Search with Automaton", color='green')
 

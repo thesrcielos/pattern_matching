@@ -23,8 +23,8 @@ def prepM(pattern):
 
     while i < n:
         while j > -1 and pattern[j] != pattern[i]:
-            j = mpNext[j]                               #  Si ocurre una falla en cierta parte del patrón, salta a la parte del prefijo más largo que también es un sufijo y continúa desde ahí, en lugar de volver a comparar todo desde el inicio.
-        i+=1
+            j = mpNext[j]                               # If it fails in certain part of the pattern, jump to the part of the largest prefix that is also a sufix
+        i+=1                                            
         j+=1
         mpNext[i] = j
 
@@ -54,7 +54,7 @@ def next_state(pattern, M, state, char):
     
     for i in range(state - 1, -1, -1):  
         n = 0
-        if pattern[i] == char:          # Se verifica que el prefijo p[0...i] ==  sufijo p[state-i..state-1]+char
+        if pattern[i] == char:          
             while n < i:
                 if pattern[n] != pattern[state - i + n]:
                     break
